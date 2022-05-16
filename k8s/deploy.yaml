@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seller-management
+spec:
+  selector:
+    matchLabels:
+      app: seller-management
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: seller-management
+    spec:
+      containers:
+        - name: seller-management
+          image: mith99/seller-management-application:{{tag}}
+          ports:
+            - containerPort: 5000

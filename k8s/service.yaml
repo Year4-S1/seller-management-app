@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: seller-management
+  name: seller-management
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+  selector:
+    app: seller-management
+  type: LoadBalancer
