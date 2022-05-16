@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({limit:"30mb", extended:true}))
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Seller Management Application")
+} )
+
 const CONNECTION_URL ='mongodb+srv://root:root@cluster0.efldi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const PORT = process.env.PORT || 5000;
