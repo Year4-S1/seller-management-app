@@ -41,7 +41,7 @@ jobs:
       - name: Update config files in k8s
         run: sed -i.bak 's/{{tag}}/${{ github.sha }}/g' k8s/deploy.yaml && rm k8s/*.bak
 
-        Alternative option - authentication via credentials json
+        # Alternative option - authentication via credentials json
       - id: "auth"
         uses: "google-github-actions/auth@v0"
         with:
